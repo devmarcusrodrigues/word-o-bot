@@ -10,7 +10,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Breadcrumb } from "@/components/breadcrumb"
 import { ProtectedRoute } from "@/components/protected-route"
-import { useSession } from "next-auth/react"
+import { useAuth } from "@/components/auth-provider"
 
 const userStats = {
   totalSessions: 45,
@@ -64,7 +64,17 @@ const achievements = [
 ]
 
 function DashboardContent() {
-  const { data: session } = useSession()
+  const { user } = useAuth()
+
+  const getUserDisplayName = () => {
+    if (user?.user_metadata?.full_name) {
+      return user.user_metadata.full_name.split(" ")[0]
+    }
+    if (user?.user_metadata?.first_name) {
+      return user.user_metadata.first_name
+    }
+    return user?.email?.split("@")[0] || "Usuário"
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -76,9 +86,7 @@ function DashboardContent() {
           {/* Header Section */}
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">
-                Olá, {session?.user?.name?.split(" ")[0] || "Usuário"}! 👋
-              </h1>
+              <h1 className="text-3xl font-bold text-gray-900">Olá, {getUserDisplayName()}! 👋</h1>
               <p className="text-gray-600 mt-1">Acompanhe o progresso do seu filho no Palavrobô</p>
             </div>
             <div className="flex gap-2 mt-4 md:mt-0">

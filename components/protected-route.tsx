@@ -1,6 +1,6 @@
 "use client"
 
-import { useSession } from "next-auth/react"
+import { useAuth } from "@/components/auth-provider"
 import { useRouter } from "next/navigation"
 import { useEffect, type ReactNode } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -14,16 +14,16 @@ interface ProtectedRouteProps {
 }
 
 export function ProtectedRoute({ children, fallback }: ProtectedRouteProps) {
-  const { data: session, status } = useSession()
+  const { user, loading } = useAuth()
   const router = useRouter()
 
   useEffect(() => {
-    if (status === "unauthenticated") {
-      router.push("/auth?callbackUrl=/dashboard")
+    if (!loading && !user) {
+      router.push("/auth/login?callbackUrl=/dashboard")
     }
-  }, [status, router])
+  }, [loading, user, router])
 
-  if (status === "loading") {
+  if (loading) {
     return (
       fallback || (
         <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
@@ -43,7 +43,7 @@ export function ProtectedRoute({ children, fallback }: ProtectedRouteProps) {
     )
   }
 
-  if (status === "unauthenticated") {
+  if (!user) {
     return (
       fallback || (
         <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
@@ -54,15 +54,13 @@ export function ProtectedRoute({ children, fallback }: ProtectedRouteProps) {
                   <Shield className="h-6 w-6 text-red-600" />
                 </div>
                 <CardTitle className="text-xl">Acesso Restrito</CardTitle>
-                <CardDescription>
-                  Você precisa estar logado com sua conta Google para acessar esta página.
-                </CardDescription>
+                <CardDescription>Você precisa estar logado para acessar esta página.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Button asChild className="w-full">
-                  <Link href="/auth?callbackUrl=/dashboard">
+                  <Link href="/auth/login?callbackUrl=/dashboard">
                     <LogIn className="h-4 w-4 mr-2" />
-                    Fazer Login com Google
+                    Fazer Login
                   </Link>
                 </Button>
                 <Button asChild variant="outline" className="w-full bg-transparent">

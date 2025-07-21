@@ -1,25 +1,21 @@
-import { withAuth } from "next-auth/middleware"
+import { NextResponse } from "next/server"
+import type { NextRequest } from "next/server"
 
-export default withAuth(
-  function middleware(req) {
-    // Add any additional middleware logic here
-  },
-  {
-    callbacks: {
-      authorized: ({ token, req }) => {
-        // Check if user is authenticated for protected routes
-        if (req.nextUrl.pathname.startsWith("/dashboard")) {
-          return !!token
-        }
-        if (req.nextUrl.pathname.startsWith("/admin")) {
-          return !!token
-        }
-        return true
-      },
-    },
-  },
-)
+export function middleware(request: NextRequest) {
+  // For now, we'll handle auth protection on the client side
+  // This middleware can be extended later for server-side protection
+  return NextResponse.next()
+}
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/admin/:path*"],
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+  ],
 }

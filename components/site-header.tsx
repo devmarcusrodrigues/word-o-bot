@@ -24,10 +24,11 @@ import {
   LogIn,
   LogOut,
   Settings,
+  UserPlus,
 } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useSession, signOut } from "next-auth/react"
+import { useAuth } from "@/components/auth-provider"
 import { cn } from "@/lib/utils"
 
 const navigationItems = [
@@ -57,7 +58,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
-  const { data: session, status } = useSession()
+  const { user, loading, signOut } = useAuth()
 
   const navItems = variant === "admin" ? adminNavigationItems : navigationItems
 
@@ -77,7 +78,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
   }
 
   const handleSignOut = async () => {
-    await signOut({ callbackUrl: "/" })
+    await signOut()
   }
 
   const getInitials = (name: string) => {
@@ -87,6 +88,16 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
       .join("")
       .toUpperCase()
       .slice(0, 2)
+  }
+
+  const getUserDisplayName = () => {
+    if (user?.user_metadata?.full_name) {
+      return user.user_metadata.full_name
+    }
+    if (user?.user_metadata?.first_name) {
+      return user.user_metadata.first_name
+    }
+    return user?.email?.split("@")[0] || "Usuário"
   }
 
   return (
@@ -117,7 +128,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-1 ml-8">
           {navItems
-            .filter((item) => !item.protected || session)
+            .filter((item) => !item.protected || user)
             .map((item) => {
               const IconComponent = item.icon
               return (
@@ -138,16 +149,16 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
 
         {/* Desktop Auth Section */}
         <div className="hidden lg:flex items-center ml-auto space-x-2">
-          {status === "loading" ? (
+          {loading ? (
             <div className="w-8 h-8 bg-slate-200 rounded-full animate-pulse" />
-          ) : session ? (
+          ) : user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                   <Avatar className="h-10 w-10">
-                    <AvatarImage src={session.user?.image || ""} alt={session.user?.name || ""} />
+                    <AvatarImage src="/placeholder.svg" alt={getUserDisplayName()} />
                     <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-500 text-white">
-                      {getInitials(session.user?.name || "U")}
+                      {getInitials(getUserDisplayName())}
                     </AvatarFallback>
                   </Avatar>
                 </Button>
@@ -155,8 +166,8 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
               <DropdownMenuContent className="w-56" align="end" forceMount>
                 <DropdownMenuLabel className="font-normal">
                   <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium leading-none">{session.user?.name}</p>
-                    <p className="text-xs leading-none text-muted-foreground">{session.user?.email}</p>
+                    <p className="text-sm font-medium leading-none">{getUserDisplayName()}</p>
+                    <p className="text-xs leading-none text-muted-foreground">{user.email}</p>
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
@@ -182,15 +193,23 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <Button
-              asChild
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-200"
-            >
-              <Link href="/auth">
-                <LogIn className="h-4 w-4 mr-2" />
-                Entrar com Google
-              </Link>
-            </Button>
+            <div className="flex items-center space-x-2">
+              <Button asChild variant="outline">
+                <Link href="/auth/signup">
+                  <UserPlus className="h-4 w-4 mr-2" />
+                  Cadastrar
+                </Link>
+              </Button>
+              <Button
+                asChild
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-200"
+              >
+                <Link href="/auth/login">
+                  <LogIn className="h-4 w-4 mr-2" />
+                  Entrar
+                </Link>
+              </Button>
+            </div>
           )}
         </div>
 
@@ -225,7 +244,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
                 <nav className="flex-1 p-4">
                   <div className="space-y-2">
                     {navItems
-                      .filter((item) => !item.protected || session)
+                      .filter((item) => !item.protected || user)
                       .map((item) => {
                         const IconComponent = item.icon
                         return (
@@ -257,7 +276,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
 
                 {/* Mobile Auth Section */}
                 <div className="p-4 border-t bg-white">
-                  {status === "loading" ? (
+                  {loading ? (
                     <div className="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
                       <div className="w-10 h-10 bg-slate-200 rounded-full animate-pulse" />
                       <div className="flex-1">
@@ -265,18 +284,18 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
                         <div className="h-3 bg-slate-200 rounded animate-pulse w-2/3" />
                       </div>
                     </div>
-                  ) : session ? (
+                  ) : user ? (
                     <div className="space-y-2">
                       <div className="flex items-center space-x-3 p-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
                         <Avatar className="h-10 w-10">
-                          <AvatarImage src={session.user?.image || ""} alt={session.user?.name || ""} />
+                          <AvatarImage src="/placeholder.svg" alt={getUserDisplayName()} />
                           <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-500 text-white">
-                            {getInitials(session.user?.name || "U")}
+                            {getInitials(getUserDisplayName())}
                           </AvatarFallback>
                         </Avatar>
                         <div className="flex-1 min-w-0">
-                          <div className="font-medium text-slate-900 truncate">{session.user?.name}</div>
-                          <div className="text-xs text-slate-500 truncate">{session.user?.email}</div>
+                          <div className="font-medium text-slate-900 truncate">{getUserDisplayName()}</div>
+                          <div className="text-xs text-slate-500 truncate">{user.email}</div>
                         </div>
                       </div>
                       <Button
@@ -292,16 +311,29 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
                       </Button>
                     </div>
                   ) : (
-                    <Button
-                      asChild
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg"
-                      onClick={() => setOpen(false)}
-                    >
-                      <Link href="/auth">
-                        <LogIn className="h-4 w-4 mr-2" />
-                        Entrar com Google
-                      </Link>
-                    </Button>
+                    <div className="space-y-2">
+                      <Button
+                        asChild
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg"
+                        onClick={() => setOpen(false)}
+                      >
+                        <Link href="/auth/login">
+                          <LogIn className="h-4 w-4 mr-2" />
+                          Entrar
+                        </Link>
+                      </Button>
+                      <Button
+                        asChild
+                        variant="outline"
+                        className="w-full bg-transparent"
+                        onClick={() => setOpen(false)}
+                      >
+                        <Link href="/auth/signup">
+                          <UserPlus className="h-4 w-4 mr-2" />
+                          Cadastrar
+                        </Link>
+                      </Button>
+                    </div>
                   )}
                 </div>
               </div>

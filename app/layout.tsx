@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Palavrobô - Robô Educativo para Crianças com Síndrome de Down",
   description:
     "O robozinho fofo que ajuda crianças com Síndrome de Down a aprender a falar corretamente de forma divertida e interativa.",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
