@@ -6,77 +6,92 @@ import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Breadcrumb } from "@/components/breadcrumb"
+import marcus from "@/public/m.jpg"
+import derek from "@/public/d.jpg"
+import everton from "@/public/e.jpg"
+import pedro from "@/public/p.jpg"
+import samuel from "@/public/s.jpg"
 
 const teamMembers = [
   {
     id: 1,
-    name: "Dr. Ana Silva",
-    role: "Fundadora & CEO",
-    department: "Liderança",
-    bio: "Fonoaudióloga especializada em Síndrome de Down com 15 anos de experiência. Mãe de uma criança com Síndrome de Down, criou o Palavrobô para ajudar outras famílias.",
-    expertise: ["Fonoaudiologia", "Síndrome de Down", "Educação Especial"],
+    name: "Marcus",
+    role: "Líder, Designer e Criador do Website",
+    department: "Desenvolvimento e Design",
+    bio: "Líder do grupo, além do criador deste website e estudante do uso de IA para código. Um cara divertido, e leve de se estar por perto.",
+    expertise: ["IA", "Front-End", "Back-End"],
+    image: marcus,
     contact: {
-      email: "ana@palavrobo.com",
-      linkedin: "ana-silva-palavrobo",
+      email: "@aotorimarcus",
+      linkedin: "devmarcusrodrigues",
+      github: "devmarcusrodrigues"
     },
   },
   {
     id: 2,
-    name: "Carlos Mendes",
-    role: "CTO & Desenvolvedor Principal",
-    department: "Tecnologia",
-    bio: "Engenheiro de software com paixão por tecnologia educativa. Especialista em desenvolvimento mobile e inteligência artificial aplicada à educação.",
-    expertise: ["Desenvolvimento Mobile", "IA", "UX/UI Design"],
+    name: "Pedro Bispo",
+    role: "Desenvolvedor do Jogo e Desenvolvedor do Protótipo",
+    department: "Desenvolvimento e Design",
+    bio: "Apaixonado por jogos, é a mente por trás do jogo do nosso projeto, além de ajudar a montar o protótipo.",
+    expertise: ["Desenvolvimento de Jogos", "Arte", "Design de Produto (Robótica)"],
+    image: pedro,
     contact: {
-      email: "carlos@palavrobo.com",
-      github: "carlos-palavrobo",
+      email: "@pedro_pipocapixel",
+      linkedin:"pedro-bispo-21367b2a5",
+      github: "",
     },
   },
   {
     id: 3,
-    name: "Dra. Maria Santos",
-    role: "Psicóloga Infantil",
-    department: "Desenvolvimento",
-    bio: "Psicóloga especializada em desenvolvimento infantil e necessidades especiais. Responsável pela metodologia pedagógica do Palavrobô.",
-    expertise: ["Psicologia Infantil", "Desenvolvimento Cognitivo", "Terapia Comportamental"],
+    name: "Derek Lacerda",
+    role: "Designer 3D do Protótipo e Desenvolvedor do Protótipo",
+    department: "Desenvolvimento e Design",
+    bio: "Bom de solda e nosso modelador 3D, Derek pegou com facilidade o uso de softwares básicos para fazer o modelo 3D para imprimirmos.",
+    expertise: ["Robótica", "Pesquisa Acadêmica", "Modelagem 3D"],
+    image: derek,
     contact: {
-      email: "maria@palavrobo.com",
-      linkedin: "maria-santos-psi",
+      email: "@derek._hs",
+      linkedin: "derek-lacerda-acioly-a34624293",
+      github: ""
     },
   },
   {
     id: 4,
-    name: "João Oliveira",
-    role: "Designer UX/UI",
-    department: "Design",
-    bio: "Designer especializado em interfaces para crianças com necessidades especiais. Foca em criar experiências intuitivas e acessíveis.",
-    expertise: ["Design de Interface", "Acessibilidade", "Design Inclusivo"],
+    name: "Samuel Cavalcanti",
+    role: "Desenvolvedor e Idealizador",
+    department: "Design de Código e Direção de Projeto",
+    bio: "Nosso designer de código, idealizador do projeto e que é praticamente o 'pai' do nosso projeto. Somos muito gratos.",
+    expertise: ["Código", "Pesquisa", "Design"],
+    image: samuel,
     contact: {
-      email: "joao@palavrobo.com",
-      linkedin: "joao-oliveira-design",
+      email: "@narukami.kamijou13",
+      linkedin: "samuel-cavalcanti-de-moura-marinho-cruz-597909296",
+      github: ""
     },
   },
   {
     id: 5,
-    name: "Fernanda Costa",
-    role: "Especialista em Conteúdo",
-    department: "Educação",
-    bio: "Pedagoga com especialização em educação inclusiva. Desenvolve o conteúdo educacional e atividades do aplicativo.",
-    expertise: ["Pedagogia", "Educação Inclusiva", "Desenvolvimento Curricular"],
+    name: "Everton Pereira",
+    role: "Desenvolvedor do Protótipo e Escolha de Peças",
+    department: "Desenvolvimento",
+    bio: "Desenvolvedor do Protótipo, montando-o do zero e escolhendo as melhores peças para o projeto.",
+    expertise: ["Desenvolvimento de Projeto (Robótica)", "Design do Circuito"],
+    image: everton,
     contact: {
-      email: "fernanda@palavrobo.com",
-      linkedin: "fernanda-costa-edu",
+      email: "@silva_everrton",
+      linkedin: "everton-pereira-da-silva-5058a6338",
+      github: ""
     },
   },
   {
     id: 6,
-    name: "Roberto Lima",
-    role: "Engenheiro de Hardware",
-    department: "Hardware",
-    bio: "Engenheiro eletrônico responsável pelo desenvolvimento dos dispositivos físicos que complementam o Palavrobô.",
-    expertise: ["Engenharia Eletrônica", "IoT", "Prototipagem"],
+    name: "Professores do TI, do UNASP-SP",
+    role: "Superiores e Professores",
+    department: "Hardware, Código e Design",
+    bio: "Foram as pessoas que acreditaram em nós, mesmo quando nós mesmos não achavamos que iríamos conseguir.",
+    expertise: ["Robótica", "Design de Games", "Prototipagem e Web Development", "Design Gráfico"],
     contact: {
-      email: "roberto@palavrobo.com",
+      email: "",
       github: "roberto-hardware",
     },
   },
@@ -144,7 +159,7 @@ export default function TeamPage() {
                           alt={member.name}
                           className="aspect-square overflow-hidden rounded-full object-cover"
                           height="128"
-                          src="/placeholder.svg?height=128&width=128"
+                          src={member.image}
                           width="128"
                         />
                       </div>
@@ -173,7 +188,7 @@ export default function TeamPage() {
                     <div className="flex justify-center space-x-3 mt-4 pt-4 border-t">
                       {member.contact.email && (
                         <Link
-                          href={`mailto:${member.contact.email}`}
+                          href={`https://instagram.com/${member.contact.email}`}
                           className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
                         >
                           <Mail className="h-4 w-4 text-gray-600" />
@@ -227,13 +242,13 @@ export default function TeamPage() {
                 <div className="flex flex-col items-center space-y-2">
                   <h3 className="text-xl font-bold">🔬 Ciência</h3>
                   <p className="text-center text-gray-600 text-sm">
-                    Baseamos nosso trabalho em pesquisas científicas e melhores práticas.
+                    Baseamos nosso trabalho em pesquisas científicas e feedback vindo de nossos professores, profissionais e amigos.
                   </p>
                 </div>
                 <div className="flex flex-col items-center space-y-2">
                   <h3 className="text-xl font-bold">🤝 Colaboração</h3>
                   <p className="text-center text-gray-600 text-sm">
-                    Trabalhamos em estreita colaboração com famílias e profissionais.
+                    Trabalhamos em estreita colaboração com profissionais.
                   </p>
                 </div>
               </div>
