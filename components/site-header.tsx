@@ -108,7 +108,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
         variant === "admin" && "bg-slate-50/95",
       )}
     >
-      <div className="container flex h-16 items-center px-4 lg:px-6">
+      <div className="flex h-16 items-center px-4 lg:px-6">
         {/* Logo */}
         <Link className="flex items-center space-x-2 transition-transform hover:scale-105" href="/">
           <div className="relative">

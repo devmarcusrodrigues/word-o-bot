@@ -27,7 +27,7 @@ const gameFeatures = [
   },
   {
     icon: Play,
-    title: "Jogos Educativos",
+    title: "Mini-Jogos Educativos",
     description: "Mini-jogos divertidos que tornam o aprendizado uma experiência prazerosa",
   },
   {
@@ -91,7 +91,8 @@ export default function GamePage() {
                 </Link>
                 <div className="space-y-2">
                   <Badge className="w-fit bg-green-100 text-green-800">Grátis para Download</Badge>
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl text-blue-600">Baixe o Palavrobô</h1>
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl text-blue-600">Palavrobô: O Jogo
+                  </h1>
                   <p className="max-w-[600px] text-gray-600 md:text-xl">
                     Comece hoje mesmo a jornada de aprendizado do seu filho com nosso aplicativo educativo
                     especializado.
@@ -145,7 +146,7 @@ export default function GamePage() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Capturas de Tela</h2>
               <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed">
-                Veja como é a interface do Palavrobô e suas principais funcionalidades.
+                Veja como é a interface do Palavrobô: O Jogo e suas principais funcionalidades.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -168,7 +169,7 @@ export default function GamePage() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
           <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Recursos do Aplicativo</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Recursos do Jogo</h2>
               <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed">
                 Funcionalidades desenvolvidas especialmente para crianças com Síndrome de Down.
               </p>
@@ -294,7 +295,7 @@ export default function GamePage() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-white">Pronto para Começar?</h2>
                 <p className="max-w-[600px] text-blue-100 md:text-xl/relaxed">
-                  Baixe o Palavrobô agora e comece a transformar o aprendizado do seu filho hoje mesmo.
+                  Baixe nosso jogo agora e comece a transformar o aprendizado do seu filho hoje mesmo.
                 </p>
               </div>
               <div className="flex flex-col gap-3 min-[400px]:flex-row">

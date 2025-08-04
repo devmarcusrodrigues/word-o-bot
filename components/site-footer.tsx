@@ -78,7 +78,7 @@ export function SiteFooter() {
             <div className="space-y-3">
               <div className="flex items-center space-x-2 text-sm text-slate-300">
                 <Mail className="h-4 w-4 text-blue-400" />
-                <span>@theinfinityworks no Instagram</span>
+                <span>@theinfinityworks</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-slate-300">
                 <Phone className="h-4 w-4 text-green-400" />
