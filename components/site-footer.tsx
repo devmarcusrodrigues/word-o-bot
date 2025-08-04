@@ -4,7 +4,7 @@ import { Volume2, Heart, Mail, Phone, MapPin } from "lucide-react"
 export function SiteFooter() {
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-      <div className="container px-4 md:px-6 py-12">
+      <div className="w-full max-w-screen-xl mx-auto px-4 md:px-6 py-12 text-left">
         <div className="grid gap-8 lg:grid-cols-4 md:grid-cols-2">
           {/* Brand Section */}
           <div className="space-y-4">

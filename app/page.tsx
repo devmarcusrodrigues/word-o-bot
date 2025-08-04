@@ -9,7 +9,7 @@ import Link from "next/link"
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex justify-center flex-col min-h-screen">
       <SiteHeader />
 
       <main className="flex-1">
@@ -101,7 +101,8 @@ export default function LandingPage() {
 
         {/* Stats Section */}
         <section className="w-full py-12 bg-white border-y">
-          <div className="container px-4 md:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
+
             <div className="grid gap-8 md:grid-cols-4 text-center">
               {[
                 { number: "1.200+", label: "Famílias Atendidas", icon: Users },
@@ -128,7 +129,7 @@ export default function LandingPage() {
 
         {/* Video Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-slate-50 to-white">
-          <div className="container px-4 md:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-6 text-center">
               <div className="space-y-4">
                 <Badge className="bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border-purple-200">
@@ -161,7 +162,8 @@ export default function LandingPage() {
 
         {/* Features Section */}
         <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
+
             <div className="flex flex-col items-center justify-center space-y-6 text-center mb-12">
               <div className="space-y-4">
                 <Badge className="bg-gradient-to-r from-green-100 to-blue-100 text-green-700 border-green-200">
@@ -225,7 +227,8 @@ export default function LandingPage() {
 
         {/* About Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-slate-50 to-white">
-          <div className="container px-4 md:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
+
             <div className="grid gap-8 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px] items-center">
               <div className="flex flex-col justify-center space-y-6">
                 <div className="space-y-4">

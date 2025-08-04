@@ -22,7 +22,7 @@ import { Breadcrumb } from "@/components/breadcrumb"
 const gameFeatures = [
   {
     icon: Volume2,
-    title: "Exercícios de Audição",
+    title: "Exercícios de Pronúncia",
     description: "Atividades interativas para melhorar a articulação e clareza da fala",
   },
   {
@@ -79,7 +79,7 @@ export default function GamePage() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-purple-50">
-          <div className="container px-4 md:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
                 <Link
@@ -141,7 +141,7 @@ export default function GamePage() {
 
         {/* Screenshots Section */}
         <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Capturas de Tela</h2>
               <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed">
@@ -166,7 +166,7 @@ export default function GamePage() {
 
         {/* Features Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-          <div className="container px-4 md:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Recursos do Aplicativo</h2>
               <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed">
@@ -198,7 +198,7 @@ export default function GamePage() {
 
         {/* System Requirements */}
         <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Requisitos do Sistema</h2>
               <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed">
@@ -289,7 +289,7 @@ export default function GamePage() {
 
         {/* Download CTA */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-blue-600">
-          <div className="container px-4 md:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-white">Pronto para Começar?</h2>
@@ -304,7 +304,7 @@ export default function GamePage() {
                 </Button>
                 <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
                   <Download className="mr-2 h-4 w-4" />
-                  Download iOS
+                  Download iOS (Em breve)
                 </Button>
                 <Button
                   size="lg"

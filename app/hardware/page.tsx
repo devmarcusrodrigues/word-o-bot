@@ -95,7 +95,7 @@ export default function HardwarePage() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-purple-50">
-          <div className="container px-4 md:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <Link href="/" className="inline-flex items-center justify-center text-blue-600 hover:text-blue-700 mb-4">
                 <ArrowLeft className="h-4 w-4 mr-2" />
@@ -119,7 +119,7 @@ export default function HardwarePage() {
 
         {/* Hardware Grid */}
         <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {hardwareItems.map((item) => {
                 const IconComponent = item.icon
@@ -178,7 +178,7 @@ export default function HardwarePage() {
 
         {/* Info Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-          <div className="container px-4 md:px-6">
+          <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Por que usar hardware dedicado?</h2>
