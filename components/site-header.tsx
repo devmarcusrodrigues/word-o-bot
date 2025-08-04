@@ -112,13 +112,13 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
         {/* Logo */}
         <Link className="flex items-center space-x-2 transition-transform hover:scale-105" href="/">
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-2 shadow-lg">
+            <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl p-2 shadow-lg">
               <Volume2 className="h-6 w-6 text-white" />
             </div>
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white animate-pulse" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="font-bold text-2xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Palavrobô
             </span>
             {variant === "admin" && <span className="text-xs text-slate-500 font-medium">Admin Panel</span>}

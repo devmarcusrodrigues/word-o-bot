@@ -22,7 +22,7 @@ import { Breadcrumb } from "@/components/breadcrumb"
 const gameFeatures = [
   {
     icon: Volume2,
-    title: "Exercícios de Pronúncia",
+    title: "Exercícios de Audição",
     description: "Atividades interativas para melhorar a articulação e clareza da fala",
   },
   {

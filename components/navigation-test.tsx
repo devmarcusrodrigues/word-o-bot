@@ -8,9 +8,9 @@ import { CheckCircle, XCircle, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 const navigationLinks = [
-  { name: "Início", href: "/", description: "Página principal do site" },
-  { name: "Jogo", href: "/jogo", description: "Página de download do aplicativo" },
-  { name: "Hardware", href: "/hardware", description: "Equipamentos recomendados" },
+  { name: "Início", href: "/", description: "Página principal" },
+  { name: "Jogo", href: "/jogo", description: "Página de download do jogo" },
+  { name: "Hardware", href: "/hardware", description: "Hardware usado" },
   { name: "Equipe", href: "/equipe", description: "Conheça nossa equipe" },
   { name: "Referências", href: "/referencias", description: "Artigos científicos" },
   { name: "Dashboard", href: "/dashboard", description: "Painel do usuário" },
