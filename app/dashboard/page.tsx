@@ -82,7 +82,7 @@ function DashboardContent() {
       <SiteHeader />
 
       <main className="flex-1 bg-gray-50">
-        <div className="container px-4 md:px-6 py-8">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 py-8">
           {/* Header Section */}
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
             <div>
