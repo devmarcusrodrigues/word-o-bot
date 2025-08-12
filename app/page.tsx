@@ -24,7 +24,7 @@ export default function LandingPage() {
 
           <div className="container relative px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px] items-center">
-              <div className="flex flex-col justify-center space-y-6">
+              <div className="flex flex-col justify-center space-y-6 max-w-7xl mx-auto px-4 md:px-6">
                 <div className="space-y-4">
                   <Badge className="w-fit bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200 hover:from-blue-200 hover:to-purple-200 transition-all duration-300">
                     <Sparkles className="h-3 w-3 mr-1" />
@@ -297,7 +297,7 @@ export default function LandingPage() {
         <section className="relative w-full py-12 md:py-24 lg:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600" />
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-          <div className="container relative px-4 md:px-6">
+          <div className="container relative w-full max-w-7xl mx-auto px-4 md:px-6 py-8">
             <div className="flex flex-col items-center justify-center space-y-6 text-center">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-5xl text-white">Comece a Jornada Hoje</h2>
