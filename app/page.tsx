@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Download, Heart, Users, Volume2, Zap, Play, Star, Shield, Sparkles } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { DarkModeButton } from "@/components/ui/darktoggle"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -329,7 +330,7 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
-
+      <DarkModeButton/>
       <SiteFooter />
     </div>
   )

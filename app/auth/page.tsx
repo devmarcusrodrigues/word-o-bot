@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { signIn, getSession, useSession } from "next-auth/react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
+import { DarkModeButton } from "@/components/ui/darktoggle"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Loader2, CheckCircle } from "lucide-react"
@@ -106,6 +107,7 @@ export default function AuthPage() {
             </CardContent>
           </Card>
         </main>
+        <DarkModeButton/>
         <SiteFooter />
       </div>
     )
@@ -126,6 +128,7 @@ export default function AuthPage() {
             </CardContent>
           </Card>
         </main>
+        <DarkModeButton/>
         <SiteFooter />
       </div>
     )
@@ -145,6 +148,7 @@ export default function AuthPage() {
           </CardContent>
         </Card>
       </main>
+      <DarkModeButton/>
       <SiteFooter />
     </div>
   )

@@ -6,6 +6,7 @@ import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Breadcrumb } from "@/components/breadcrumb"
+import { DarkModeButton } from "@/components/ui/darktoggle"
 
 const references = [
   {
@@ -252,6 +253,7 @@ export default function ReferencesPage() {
           </div>
         </section>
       </main>
+      <DarkModeButton/>
 
       <SiteFooter />
     </div>

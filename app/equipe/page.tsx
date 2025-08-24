@@ -6,6 +6,7 @@ import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Breadcrumb } from "@/components/breadcrumb"
+import { DarkModeButton } from "@/components/ui/darktoggle"
 import marcus from "@/public/m.jpg"
 import derek from "@/public/d.jpg"
 import everton from "@/public/e.jpg"
@@ -16,7 +17,7 @@ const teamMembers = [
   {
     id: 1,
     name: "Marcus",
-    role: "Líder, Designer e Criador do Website",
+    role: "Líder do Time, Designer e Criador do Website",
     department: "Desenvolvimento e Design",
     bio: "Líder do grupo, além do criador deste website e estudante do uso de IA para código. Um cara divertido, e leve de se estar por perto.",
     expertise: ["IA", "Front-End", "Back-End"],
@@ -256,7 +257,7 @@ export default function TeamPage() {
           </div>
         </section>
       </main>
-
+      <DarkModeButton/>
       {/* Footer */}
       <SiteFooter />
     </div>

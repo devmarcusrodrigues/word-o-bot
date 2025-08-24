@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { DarkModeButton } from "@/components/ui/darktoggle"
 import {
   Volume2,
   ArrowLeft,
@@ -320,6 +321,7 @@ export default function GamePage() {
           </div>
         </section>
       </main>
+      <DarkModeButton/>
 
       {/* Footer */}
       <SiteFooter />

@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
+import { DarkModeButton } from "@/components/ui/darktoggle"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {
   Dialog,
@@ -433,6 +434,7 @@ export default function AdminPage() {
           </Card>
         </div>
       </main>
+      <DarkModeButton/>
       <SiteFooter />
     </div>
   )

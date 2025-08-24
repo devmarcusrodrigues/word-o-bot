@@ -7,6 +7,7 @@ import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Breadcrumb } from "@/components/breadcrumb"
+import { DarkModeButton } from "@/components/ui/darktoggle"
 
 const hardwareItems = [
   {
@@ -220,7 +221,7 @@ export default function HardwarePage() {
           </div>
         </section>
       </main>
-
+      <DarkModeButton/>
       {/* Footer */}
       <SiteFooter />
     </div>

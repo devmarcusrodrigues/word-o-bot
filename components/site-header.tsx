@@ -31,6 +31,7 @@ import { usePathname } from "next/navigation"
 import { useAuth } from "@/components/auth-provider"
 import { cn } from "@/lib/utils"
 
+
 const navigationItems = [
   { name: "Início", href: "/", icon: Home },
   { name: "Jogo", href: "/jogo", icon: Gamepad },
@@ -59,6 +60,15 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
   const { user, loading, signOut } = useAuth()
+  const [dark, setDark] = useState(false);
+
+      useEffect(() => {
+        if (dark) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }, [dark]);
 
   const navItems = variant === "admin" ? adminNavigationItems : navigationItems
 
@@ -101,10 +111,11 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
   }
 
   return (
+
     <header
       className={cn(
         "sticky top-0 z-50 w-full border-b transition-all duration-200",
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-white",
+        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm dark:bg-gray-800" : "bg-white dark:bg-gray-900",
         variant === "admin" && "bg-slate-50/95",
       )}
     >
@@ -136,7 +147,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-slate-100",
+                    "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-slate-100 dark:bg-white-400",
                     isActive(item.href) ? "bg-blue-50 text-blue-700 shadow-sm" : "text-slate-600 hover:text-slate-900",
                   )}
                 >
@@ -146,6 +157,8 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
               )
             })}
         </nav>
+
+        
 
         {/* Desktop Auth Section */}
         <div className="hidden lg:flex items-center ml-auto space-x-2">
@@ -273,7 +286,9 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
                       })}
                   </div>
                 </nav>
-
+                <Button variant="outline" onClick={() => setDark(!dark)} className="mr-2 rounded-lg text-sm font-medium">
+                  {dark ? "Claro" : "Escuro"}
+                </Button>
                 {/* Mobile Auth Section */}
                 <div className="p-4 border-t bg-white">
                   {loading ? (

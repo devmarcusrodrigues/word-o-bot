@@ -11,6 +11,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { Breadcrumb } from "@/components/breadcrumb"
 import { ProtectedRoute } from "@/components/protected-route"
 import { useAuth } from "@/components/auth-provider"
+import { DarkModeButton } from "@/components/ui/darktoggle"
 
 const userStats = {
   totalSessions: 45,
@@ -221,6 +222,7 @@ function DashboardContent() {
           </div>
         </div>
       </main>
+      <DarkModeButton/>
       <SiteFooter />
     </div>
   )
