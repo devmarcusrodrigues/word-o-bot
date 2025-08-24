@@ -147,8 +147,8 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-slate-100 dark:bg-white-400",
-                    isActive(item.href) ? "bg-blue-50 text-blue-700 shadow-sm" : "text-slate-600 hover:text-slate-900",
+                    "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-slate-100 dark:hover:bg-slate-700 dark",
+                    isActive(item.href) ? "bg-blue-50 text-blue-700 shadow-sm dark:text-blue-900 dark:bg-white" : "text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-300",
                   )}
                 >
                   <IconComponent className="h-4 w-4" />
@@ -215,7 +215,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
               </Button>
               <Button
                 asChild
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-200"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-200 dark:text-white"
               >
                 <Link href="/auth/login">
                   <LogIn className="h-4 w-4 mr-2" />
@@ -238,7 +238,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
             <SheetContent side="left" className="w-[300px] sm:w-[350px] p-0">
               <div className="flex flex-col h-full bg-gradient-to-b from-slate-50 to-white">
                 {/* Mobile Header */}
-                <div className="flex items-center space-x-3 p-6 border-b bg-white">
+                <div className="flex items-center space-x-3 p-6 border-b bg-white dark:bg-gray-900">
                   <div className="relative">
                     <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-2 shadow-lg">
                       <Volume2 className="h-6 w-6 text-white" />
@@ -254,7 +254,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
                 </div>
 
                 {/* Mobile Navigation Items */}
-                <nav className="flex-1 p-4">
+                <nav className="flex-1 p-4 dark:bg-gray-800">
                   <div className="space-y-2">
                     {navItems
                       .filter((item) => !item.protected || user)
@@ -268,8 +268,8 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
                             className={cn(
                               "flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200",
                               isActive(item.href)
-                                ? "bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 shadow-sm border border-blue-100"
-                                : "text-slate-600 hover:bg-slate-100 hover:text-slate-900",
+                                ? "bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 shadow-sm border border-blue-100 dark:bg-gradient-to-r dark:from-blue-700 dark:to-purple-500 dark:text-white"
+                                : "text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-white dark:hover:text-slate-100 dark:hover:bg-slate-700",
                             )}
                           >
                             <div
@@ -286,11 +286,8 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
                       })}
                   </div>
                 </nav>
-                <Button variant="outline" onClick={() => setDark(!dark)} className="mr-2 rounded-lg text-sm font-medium">
-                  {dark ? "Claro" : "Escuro"}
-                </Button>
                 {/* Mobile Auth Section */}
-                <div className="p-4 border-t bg-white">
+                <div className="p-4 border-t bg-white dark:bg-gray-900">
                   {loading ? (
                     <div className="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
                       <div className="w-10 h-10 bg-slate-200 rounded-full animate-pulse" />
@@ -329,7 +326,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
                     <div className="space-y-2">
                       <Button
                         asChild
-                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg"
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg dark:text-white"
                         onClick={() => setOpen(false)}
                       >
                         <Link href="/auth/login">
