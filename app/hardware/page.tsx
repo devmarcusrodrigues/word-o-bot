@@ -95,10 +95,10 @@ export default function HardwarePage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-purple-50 dark:bg-gradient-to-br dark:from-blue-800 dark:to-gray-900">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-purple-50  dark:from-blue-800 dark:to-gray-900">
           <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <Link href="/" className="inline-flex items-center justify-center text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-500 mb-4">
+              <Link href="/" className="inline-flex items-center justify-center text-blue-600 dark:text-blue-300 hover:text-blue-700 CCCC mb-4">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Voltar ao início
               </Link>

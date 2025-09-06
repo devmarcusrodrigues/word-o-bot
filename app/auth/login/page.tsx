@@ -97,7 +97,7 @@ export default function LoginPage() {
     <div className="flex flex-col min-h-screen">
       <SiteHeader />
 
-      <main className="flex-1 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-4">
+      <main className="flex-1 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900 dark:to-gray-950 flex items-center justify-center p-4">
         <div className="w-full max-w-md space-y-6">
           <Card>
             <CardHeader className="text-center">

@@ -132,19 +132,14 @@ export default function AdminPage() {
       {/* Header */}
       <SiteHeader variant="admin" />
 
-      <main className="flex-1 bg-gray-50">
+      <main className="flex-1 bg-gray-50 dark:bg-blue-950">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 py-8">
           {/* Header Section */}
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Painel Administrativo</h1>
-              <p className="text-gray-600 mt-1">Gerencie produtos, preços e configurações do sistema</p>
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Painel Administrativo</h1>
+              <p className="text-gray-600 dark:text-gray-200 mt-1">Gerencie produtos, preços e configurações do sistema</p>
             </div>
-          </div>
-
-          {/* Breadcrumb */}
-          <div className="container px-4 md:px-6 mb-6">
-            <Breadcrumb items={[{ name: "Admin" }]} />
           </div>
 
           {/* Stats Cards */}

@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import { DarkModeButton } from "@/components/ui/darktoggle"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { useAuth } from "@/components/auth-provider"
@@ -91,7 +92,7 @@ export default function SignupPage() {
     return (
       <div className="flex flex-col min-h-screen">
         <SiteHeader />
-        <main className="flex-1 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-4">
+        <main className="flex-1 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900 dark:to-gray-950 flex items-center justify-center p-4">
           <Card className="w-full max-w-md">
             <CardContent className="flex flex-col items-center justify-center p-8 space-y-4">
               <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
@@ -142,7 +143,7 @@ export default function SignupPage() {
     <div className="flex flex-col min-h-screen">
       <SiteHeader />
 
-      <main className="flex-1 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-4">
+      <main className="flex-1 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900 dark:to-gray-950 flex items-center justify-center p-4">
         <div className="w-full max-w-md">
           <Card>
             <CardHeader className="text-center">
@@ -280,7 +281,7 @@ export default function SignupPage() {
           </Card>
         </div>
       </main>
-
+      <DarkModeButton/>
       <SiteFooter />
     </div>
   )
