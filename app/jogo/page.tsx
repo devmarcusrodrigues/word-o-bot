@@ -79,11 +79,12 @@ export default function GamePage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-purple-50">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-purple-50 dark:bg-gradient-to-br dark:from-gray-600 dark:via-gray-800 dark:to-gray-950">
           <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
                 <Link
+
                   href="/"
                   className="inline-flex items-center justify-center text-blue-600 hover:text-blue-700 w-fit"
                 >
