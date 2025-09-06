@@ -125,16 +125,16 @@ export default function TeamPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-purple-50">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-700 dark:to-gray-700">
           <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <Link href="/" className="inline-flex items-center justify-center text-blue-600 hover:text-blue-700 mb-4">
+              <Link href="/" className="inline-flex items-center justify-center text-blue-600 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-500 mb-4">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Voltar ao início
               </Link>
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl text-blue-600">Nossa Equipe</h1>
-                <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl text-blue-600 dark:text-white">Nossa Equipe</h1>
+                <p className="max-w-[900px] text-gray-600 dark:text-gray-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Conheça os profissionais dedicados que tornam o Palavrobô uma realidade, unidos pela paixão de ajudar
                   crianças a se comunicarem melhor.
                 </p>
@@ -142,10 +142,6 @@ export default function TeamPage() {
             </div>
           </div>
         </section>
-
-        <div className="container px-4 md:px-6 mb-6">
-          <Breadcrumb items={[{ name: "Equipe" }]} />
-        </div>
 
         {/* Team Grid */}
         <section className="w-full py-12 md:py-24 lg:py-32">
@@ -220,7 +216,7 @@ export default function TeamPage() {
         </section>
 
         {/* Mission Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-blue-800">
           <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -228,7 +224,7 @@ export default function TeamPage() {
                   <Heart className="h-8 w-8 text-red-600" />
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nossa Missão</h2>
-                <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p className="max-w-[900px] text-gray-600 dark:text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Somos uma equipe multidisciplinar unida por um propósito comum: criar tecnologia que transforme a vida
                   de crianças com Síndrome de Down e suas famílias.
                 </p>
@@ -236,19 +232,19 @@ export default function TeamPage() {
               <div className="grid gap-6 lg:grid-cols-3 lg:gap-12 max-w-5xl mt-8">
                 <div className="flex flex-col items-center space-y-2">
                   <h3 className="text-xl font-bold">💝 Paixão</h3>
-                  <p className="text-center text-gray-600 text-sm">
+                  <p className="text-center text-gray-600 dark:text-blue-200 text-sm">
                     Cada membro da nossa equipe tem uma conexão pessoal com nossa causa.
                   </p>
                 </div>
                 <div className="flex flex-col items-center space-y-2">
                   <h3 className="text-xl font-bold">🔬 Ciência</h3>
-                  <p className="text-center text-gray-600 text-sm">
+                  <p className="text-center text-gray-600 dark:text-blue-200 text-sm">
                     Baseamos nosso trabalho em pesquisas científicas e feedback vindo de nossos professores, profissionais e amigos.
                   </p>
                 </div>
                 <div className="flex flex-col items-center space-y-2">
                   <h3 className="text-xl font-bold">🤝 Colaboração</h3>
-                  <p className="text-center text-gray-600 text-sm">
+                  <p className="text-center text-gray-600 dark:text-blue-200 text-sm">
                     Trabalhamos em estreita colaboração com profissionais.
                   </p>
                 </div>

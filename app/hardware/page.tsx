@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Volume2, ArrowLeft, ShoppingCart, Tablet, Headphones, Smartphone, Monitor, Speaker, Wifi } from "lucide-react"
+import { Volume2, ArrowLeft, ShoppingCart, Tablet, Headphones, Smartphone, Monitor, Speaker, Wifi, HandIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
@@ -12,63 +12,63 @@ import { DarkModeButton } from "@/components/ui/darktoggle"
 const hardwareItems = [
   {
     id: 1,
-    name: "Tablet Educativo Palavrobô",
-    description: "Tablet especialmente configurado com o app Palavrobô pré-instalado e otimizado para crianças.",
-    price: "R$ 899,00",
-    originalPrice: "R$ 1.199,00",
+    name: "ESP32-CYD (Cheap Yellow Display)",
+    description: "ESP32 com tela especialmente configurado com o app Palavrobô pré-instalado e otimizado para crianças.",
+    price: "R$ 229,00",
+    originalPrice: "R$ 299,00",
     category: "Essencial",
     icon: Tablet,
-    features: ["Tela 10 polegadas", "Capa protetora", "Controle parental", "Bateria 12h"],
+    features: ["Tela de 20 centímetros", "Tela touch", "Stylus inculsa", "Econômico"],
   },
   {
     id: 2,
-    name: "Fones de Ouvido Infantis",
-    description: "Fones de ouvido seguros com limitador de volume, perfeitos para exercícios de audição.",
-    price: "R$ 149,00",
-    originalPrice: "R$ 199,00",
-    category: "Recomendado",
-    icon: Headphones,
-    features: ["Limitador de volume", "Confortável", "Cabo reforçado", "Design colorido"],
+    name: "Mão Robótica",
+    description: "Mão robótica para atividades que sejam do conteúdo de LIBRAS.",
+    price: "R$ 249,00",
+    originalPrice: "R$ 299,00",
+    category: "Essencial",
+    icon: HandIcon,
+    features: ["Funcional", "Plug&Play", "Reforçada", "Faz sinais com precisão"],
   },
   {
     id: 3,
-    name: "Alto-falante Bluetooth",
-    description: "Alto-falante portátil com qualidade de áudio superior para atividades em grupo.",
+    name: "Speakers",
+    description: "Alto-falantes com qualidade de áudio superior para atividades.",
     price: "R$ 299,00",
     originalPrice: "R$ 399,00",
-    category: "Opcional",
+    category: "Recomendado",
     icon: Speaker,
-    features: ["Bluetooth 5.0", "Bateria 20h", "À prova d'água", "Som cristalino"],
+    features: ["Áudio de alta qualidade", "Econômico", "À prova d'água"],
   },
   {
     id: 4,
-    name: "Suporte Ajustável",
-    description: "Suporte ergonômico para tablet que se adapta à altura e postura da criança.",
+    name: "Suporte Ajustável para Pilhas",
+    description: "Suporte para carregar pilhas.",
     price: "R$ 89,00",
     originalPrice: "R$ 129,00",
     category: "Acessório",
     icon: Monitor,
-    features: ["Altura ajustável", "Rotação 360°", "Base antiderrapante", "Dobrável"],
+    features: ["Carregamento rápido", "Quatro slots", "Seguro", "Dobrável"],
   },
   {
     id: 5,
-    name: "Microfone Infantil",
-    description: "Microfone especial para exercícios de pronúncia com cancelamento de ruído.",
-    price: "R$ 199,00",
-    originalPrice: "R$ 249,00",
+    name: "Microfone",
+    description: "Microfone especial para exercícios de pronúncia.",
+    price: "R$ 19,00",
+    originalPrice: "R$ 39,00",
     category: "Recomendado",
     icon: Volume2,
-    features: ["Cancelamento de ruído", "Cabo USB", "Indicador LED", "Grip antiderrapante"],
+    features: ["Boa qualidade", "Cabo USB", "Voz cristalina", "Grip antiderrapante"],
   },
   {
     id: 6,
-    name: "Roteador Wi-Fi Dedicado",
-    description: "Roteador com controle parental e configurações otimizadas para apps educativos.",
+    name: "Wi-Fi Dedicado",
+    description: "Rede dedicada ao uso do Palavrobô",
     price: "R$ 349,00",
     originalPrice: "R$ 449,00",
     category: "Opcional",
     icon: Wifi,
-    features: ["Controle parental", "Wi-Fi 6", "Cobertura ampla", "Configuração fácil"],
+    features: ["Wi-Fi 6", "Cobertura ampla", "Configuração fácil"],
   },
 ]
 
@@ -95,16 +95,16 @@ export default function HardwarePage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-purple-50">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-purple-50 dark:bg-gradient-to-br dark:from-blue-800 dark:to-gray-900">
           <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <Link href="/" className="inline-flex items-center justify-center text-blue-600 hover:text-blue-700 mb-4">
+              <Link href="/" className="inline-flex items-center justify-center text-blue-600 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-500 mb-4">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Voltar ao início
               </Link>
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl text-blue-600">Hardware Recomendado</h1>
-                <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl text-blue-600 dark:text-white">Hardware Recomendado</h1>
+                <p className="max-w-[900px] text-gray-600 dark:text-blue-50 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Equipamentos especialmente selecionados para potencializar a experiência do Palavrobô e garantir o
                   melhor aprendizado para seu filho.
                 </p>
@@ -112,11 +112,6 @@ export default function HardwarePage() {
             </div>
           </div>
         </section>
-
-        {/* Breadcrumb */}
-        <div className="container px-4 md:px-6 mb-6">
-          <Breadcrumb items={[{ name: "Hardware" }]} />
-        </div>
 
         {/* Hardware Grid */}
         <section className="w-full py-12 md:py-24 lg:py-32">
@@ -140,9 +135,9 @@ export default function HardwarePage() {
                         <Image
                           alt={item.name}
                           className="aspect-square overflow-hidden rounded-lg object-cover"
-                          height="200"
+                          height="400"
                           src="/placeholder.svg?height=200&width=200"
-                          width="200"
+                          width="400"
                         />
                       </div>
                       <p className="text-gray-600 text-sm mb-4">{item.description}</p>
@@ -167,7 +162,7 @@ export default function HardwarePage() {
                       </div>
                       <Button className="w-full bg-blue-600 hover:bg-blue-700">
                         <ShoppingCart className="mr-2 h-4 w-4" />
-                        Compre Agora
+                        Compre Agora!
                       </Button>
                     </CardFooter>
                   </Card>
@@ -178,12 +173,12 @@ export default function HardwarePage() {
         </section>
 
         {/* Info Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-800">
           <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Por que usar hardware dedicado?</h2>
-                <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p className="max-w-[900px] text-gray-600 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Equipamentos otimizados garantem a melhor experiência de aprendizado para crianças com Síndrome de
                   Down.
                 </p>
@@ -194,7 +189,7 @@ export default function HardwarePage() {
                     <Volume2 className="h-6 w-6 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-bold">Qualidade de Áudio</h3>
-                  <p className="text-center text-gray-600 text-sm">
+                  <p className="text-center text-gray-600 dark:text-gray-400 text-sm">
                     Hardware especializado garante clareza perfeita para exercícios de pronúncia.
                   </p>
                 </div>
@@ -203,7 +198,7 @@ export default function HardwarePage() {
                     <Tablet className="h-6 w-6 text-green-600" />
                   </div>
                   <h3 className="text-xl font-bold">Durabilidade</h3>
-                  <p className="text-center text-gray-600 text-sm">
+                  <p className="text-center text-gray-600 dark:text-gray-400 text-sm">
                     Equipamentos resistentes e seguros, projetados para uso infantil intensivo.
                   </p>
                 </div>
@@ -212,7 +207,7 @@ export default function HardwarePage() {
                     <Smartphone className="h-6 w-6 text-purple-600" />
                   </div>
                   <h3 className="text-xl font-bold">Facilidade de Uso</h3>
-                  <p className="text-center text-gray-600 text-sm">
+                  <p className="text-center text-gray-600 dark:text-gray-400 text-sm">
                     Interface simplificada e controles adaptados para crianças com necessidades especiais.
                   </p>
                 </div>

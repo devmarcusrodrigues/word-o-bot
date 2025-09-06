@@ -1,4 +1,5 @@
 "use client";
+import { Moon, MoonIcon, Sun, SunIcon } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function DarkModeButton() {
@@ -36,7 +37,7 @@ export function DarkModeButton() {
         hover:bg-gray-300 dark:hover:bg-gray-700
       "
     >
-      {dark ? "Modo Claro" : "Modo Escuro"}
+      {dark ? "Claro" : "Escuro"}
     </button>
   );
 }
