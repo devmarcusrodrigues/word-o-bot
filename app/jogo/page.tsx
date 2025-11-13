@@ -19,6 +19,10 @@ import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Breadcrumb } from "@/components/breadcrumb"
+import gametitle from "@/public/gametitle.png"
+import running from "@/public/running.png"
+import game from "@/public/game.png"
+import game2 from "@/public/game2.png"
 
 const gameFeatures = [
   {
@@ -65,10 +69,10 @@ const systemRequirements = {
 }
 
 const screenshots = [
-  { id: 1, alt: "Tela inicial do jogo", src: "/placeholder.svg?height=300&width=200" },
-  { id: 2, alt: "Exercício de pronúncia", src: "/placeholder.svg?height=300&width=200" },
-  { id: 3, alt: "Sistema de recompensas", src: "/placeholder.svg?height=300&width=200" },
-  { id: 4, alt: "Progresso do usuário", src: "/placeholder.svg?height=300&width=200" },
+  { id: 1, alt: "Tela inicial do jogo", src: gametitle },
+  { id: 2, alt: "Cutscene com o Palavrobô correndo na praia", src: running },
+  { id: 3, alt: "Fase 1", src: game },
+  { id: 4, alt: "Fase 2", src: game2 },
 ]
 
 export default function GamePage() {
@@ -130,7 +134,7 @@ export default function GamePage() {
                   alt="Palavrobô App Interface"
                   className="aspect-[3/4] overflow-hidden rounded-xl object-cover shadow-2xl"
                   height="600"
-                  src="/placeholder.svg?height=600&width=450"
+                  src={gametitle}
                   width="450"
                 />
               </div>

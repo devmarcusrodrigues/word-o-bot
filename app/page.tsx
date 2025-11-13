@@ -7,6 +7,8 @@ import { SiteFooter } from "@/components/site-footer"
 import { DarkModeButton } from "@/components/ui/darktoggle"
 import Image from "next/image"
 import Link from "next/link"
+import wordobot from "@/public/wordobot.png"
+import wordobot2 from "@/public/wordobot2.png"
 
 export default function LandingPage() {
   return (
@@ -88,7 +90,7 @@ export default function LandingPage() {
                     alt="Palavrobô - Robô educativo"
                     className="relative aspect-square overflow-hidden rounded-2xl object-cover shadow-2xl border border-white/20"
                     height="550"
-                    src="/placeholder.svg?height=550&width=550"
+                    src={wordobot}
                     width="550"
                   />
                   <div className="absolute -top-4 -right-4 bg-green-400 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg animate-bounce">
@@ -285,7 +287,7 @@ export default function LandingPage() {
                     alt="Criança usando o Palavrobô"
                     className="relative aspect-square overflow-hidden rounded-2xl object-cover shadow-2xl border border-white/20"
                     height="400"
-                    src="/placeholder.svg?height=400&width=400"
+                    src={wordobot2}
                     width="400"
                   />
                 </div>

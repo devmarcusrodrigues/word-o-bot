@@ -48,7 +48,7 @@ const teamMembers = [
     role: "Designer 3D do Protótipo e Desenvolvedor do Protótipo",
     department: "Desenvolvimento e Design",
     bio: "Bom de solda e nosso modelador 3D, Derek pegou com facilidade o uso de softwares básicos para fazer o modelo 3D para imprimirmos.",
-    expertise: ["Robótica", "Pesquisa Acadêmica", "Modelagem 3D"],
+    expertise: ["Robótica", "Pesquisa", "Modelagem 3D"],
     image: derek,
     contact: {
       email: "@derek._hs",
@@ -74,7 +74,7 @@ const teamMembers = [
     id: 5,
     name: "Everton Pereira",
     role: "Desenvolvedor do Protótipo e Escolha de Peças",
-    department: "Desenvolvimento",
+    department: "Desenvolvimento e Logística",
     bio: "Desenvolvedor do Protótipo, montando-o do zero e escolhendo as melhores peças para o projeto.",
     expertise: ["Desenvolvimento de Projeto (Robótica)", "Design do Circuito"],
     image: everton,
@@ -93,24 +93,24 @@ const teamMembers = [
     expertise: ["Robótica", "Design de Games", "Prototipagem e Web Development", "Design Gráfico"],
     contact: {
       email: "",
-      github: "roberto-hardware",
+      github: "",
     },
   },
 ]
 
-const getDepartmentColor = (department: string) => {
-  switch (department) {
-    case "Liderança":
-      return "bg-purple-100 text-purple-800"
-    case "Tecnologia":
+const getDepartmentColor = (role: string) => {
+  switch (role) {
+    case "Desenvolvedor do Protótipo e Escolha de Peças":
+      return "bg-slate-100 text-slate-800"
+    case "Líder do Time, Designer e Criador do Website":
       return "bg-blue-100 text-blue-800"
-    case "Desenvolvimento":
+    case "Designer 3D do Protótipo e Desenvolvedor do Protótipo":
       return "bg-green-100 text-green-800"
-    case "Design":
+    case "Desenvolvedor e Idealizador":
       return "bg-pink-100 text-pink-800"
-    case "Educação":
+    case "Superiores e Professores":
       return "bg-yellow-100 text-yellow-800"
-    case "Hardware":
+    case "Desenvolvedor do Jogo e Desenvolvedor do Protótipo":
       return "bg-orange-100 text-orange-800"
     default:
       return "bg-gray-100 text-gray-800"
@@ -161,7 +161,7 @@ export default function TeamPage() {
                         />
                       </div>
                       <div className="space-y-2">
-                        <Badge className={getDepartmentColor(member.department)}>{member.department}</Badge>
+                        <Badge className={getDepartmentColor(member.role)}>{member.department}</Badge>
                         <h3 className="text-xl font-bold">{member.name}</h3>
                         <p className="text-blue-600 font-medium">{member.role}</p>
                       </div>

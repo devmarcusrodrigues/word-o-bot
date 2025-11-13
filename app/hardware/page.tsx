@@ -8,6 +8,12 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Breadcrumb } from "@/components/breadcrumb"
 import { DarkModeButton } from "@/components/ui/darktoggle"
+import cyd from "@/public/cyd.jpeg"
+import hand from "@/public/hand.jpeg"
+import speaker from "@/public/speaker.jpeg"
+import support from "@/public/support.jpeg"
+import mic from "@/public/mic.jpeg"
+import wifi from "@/public/wifi.jpeg"
 
 const hardwareItems = [
   {
@@ -17,6 +23,7 @@ const hardwareItems = [
     price: "R$ 229,00",
     originalPrice: "R$ 299,00",
     category: "Essencial",
+    pic: cyd,
     icon: Tablet,
     features: ["Tela de 20 centímetros", "Tela touch", "Stylus inculsa", "Econômico"],
   },
@@ -27,6 +34,7 @@ const hardwareItems = [
     price: "R$ 249,00",
     originalPrice: "R$ 299,00",
     category: "Essencial",
+    pic: hand,
     icon: HandIcon,
     features: ["Funcional", "Plug&Play", "Reforçada", "Faz sinais com precisão"],
   },
@@ -37,6 +45,7 @@ const hardwareItems = [
     price: "R$ 299,00",
     originalPrice: "R$ 399,00",
     category: "Recomendado",
+    pic: speaker,
     icon: Speaker,
     features: ["Áudio de alta qualidade", "Econômico", "À prova d'água"],
   },
@@ -47,6 +56,7 @@ const hardwareItems = [
     price: "R$ 89,00",
     originalPrice: "R$ 129,00",
     category: "Acessório",
+    pic: support,
     icon: Monitor,
     features: ["Carregamento rápido", "Quatro slots", "Seguro", "Dobrável"],
   },
@@ -57,6 +67,7 @@ const hardwareItems = [
     price: "R$ 19,00",
     originalPrice: "R$ 39,00",
     category: "Recomendado",
+    pic: mic,
     icon: Volume2,
     features: ["Boa qualidade", "Cabo USB", "Voz cristalina", "Grip antiderrapante"],
   },
@@ -67,6 +78,7 @@ const hardwareItems = [
     price: "R$ 349,00",
     originalPrice: "R$ 449,00",
     category: "Opcional",
+    pic: wifi,
     icon: Wifi,
     features: ["Wi-Fi 6", "Cobertura ampla", "Configuração fácil"],
   },
@@ -136,7 +148,7 @@ export default function HardwarePage() {
                           alt={item.name}
                           className="aspect-square overflow-hidden rounded-lg object-cover"
                           height="400"
-                          src="/placeholder.svg?height=200&width=200"
+                          src={item.pic}
                           width="400"
                         />
                       </div>
